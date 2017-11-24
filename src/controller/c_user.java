@@ -13,7 +13,7 @@ import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import model.m_user;
-import view.v_tambahUser;
+import view.v_user;
 
 /**
  *
@@ -21,10 +21,10 @@ import view.v_tambahUser;
  */
 public class c_user {
 
-    private view.v_tambahUser viewUser;
+    private view.v_user viewUser;
     private model.m_user modelUser;
 
-    public c_user(v_tambahUser viewUser, m_user modelUser) throws SQLException {
+    public c_user(v_user viewUser, m_user modelUser) throws SQLException {
         this.viewUser = viewUser;
         this.modelUser = modelUser;
         this.viewUser.setVisible(true);

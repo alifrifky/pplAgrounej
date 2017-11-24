@@ -77,12 +77,13 @@ public int getRowCount() {
         tabel = new javax.swing.JTable();
         combo = new javax.swing.JComboBox<>();
         btn_peramalan = new javax.swing.JButton();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
         btn_kembali = new javax.swing.JToggleButton();
         nilai = new javax.swing.JLabel();
+        nilai1 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         tabel.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -97,69 +98,43 @@ public int getRowCount() {
         ));
         jScrollPane1.setViewportView(tabel);
 
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 110, 319, 271));
+
         combo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-", "2015", "2016", "2017", "2018", "2019", "2020", "2021" }));
+        combo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                comboActionPerformed(evt);
+            }
+        });
+        getContentPane().add(combo, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 220, -1, 37));
 
-        btn_peramalan.setText("Peramalan");
-
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane2.setViewportView(jTextArea1);
+        btn_peramalan.setIcon(new javax.swing.ImageIcon("E:\\Kuliah\\Semester 5\\PPL AGRO\\UI PPL\\btn_peraaamaaalan.png")); // NOI18N
+        btn_peramalan.setContentAreaFilled(false);
+        getContentPane().add(btn_peramalan, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 230, -1, -1));
 
         btn_kembali.setText("kembali");
+        getContentPane().add(btn_kembali, new org.netbeans.lib.awtextra.AbsoluteConstraints(654, 11, -1, -1));
 
-        nilai.setText("jLabel1");
+        nilai.setFont(new java.awt.Font("Segoe UI", 2, 24)); // NOI18N
+        nilai.setForeground(new java.awt.Color(255, 204, 0));
+        nilai.setText("Nilai Peramalan");
+        getContentPane().add(nilai, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 300, 180, 30));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(30, 30, 30)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btn_peramalan)
-                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 58, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(combo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(74, 74, 74))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(nilai)
-                                .addGap(112, 112, 112)))))
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 319, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(175, 175, 175))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(btn_kembali)
-                .addGap(61, 61, 61))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(65, 65, 65)
-                        .addComponent(combo, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(12, 12, 12)
-                        .addComponent(btn_peramalan)
-                        .addGap(18, 18, 18)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(46, 46, 46)
-                        .addComponent(nilai))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(btn_kembali)
-                        .addGap(23, 23, 23)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 271, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(121, Short.MAX_VALUE))
-        );
+        nilai1.setFont(new java.awt.Font("Segoe UI", 2, 24)); // NOI18N
+        nilai1.setForeground(new java.awt.Color(255, 255, 255));
+        nilai1.setText("jLabel1");
+        getContentPane().add(nilai1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 340, 110, 30));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gambar/bg_peramalan.png"))); // NOI18N
+        jLabel1.setText("jLabel1");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void comboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_comboActionPerformed
 
     /**
      * @param args the command line arguments
@@ -202,10 +177,10 @@ public int getRowCount() {
     private javax.swing.JToggleButton btn_kembali;
     private javax.swing.JButton btn_peramalan;
     private javax.swing.JComboBox<String> combo;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTextArea jTextArea1;
     private javax.swing.JLabel nilai;
+    private javax.swing.JLabel nilai1;
     private javax.swing.JTable tabel;
     // End of variables declaration//GEN-END:variables
 

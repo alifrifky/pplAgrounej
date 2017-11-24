@@ -127,10 +127,10 @@ public class v_adminPesanan extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        btn_konfirmasi.setIcon(new javax.swing.ImageIcon("C:\\Users\\Alif\\Downloads\\expotan\\1\\konfirmasi (2).png")); // NOI18N
+        btn_konfirmasi.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gambar/btn_konfirmasi.png"))); // NOI18N
         btn_konfirmasi.setBorderPainted(false);
         btn_konfirmasi.setContentAreaFilled(false);
-        getContentPane().add(btn_konfirmasi, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 280, -1, -1));
+        getContentPane().add(btn_konfirmasi, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 220, -1, -1));
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -145,7 +145,7 @@ public class v_adminPesanan extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(jTable1);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 160, 690, 150));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 70, 380, 210));
 
         id.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         id.setForeground(new java.awt.Color(255, 255, 255));
@@ -165,30 +165,42 @@ public class v_adminPesanan extends javax.swing.JFrame {
         ));
         jScrollPane2.setViewportView(jTable2);
 
-        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 470, 690, 170));
+        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 330, 390, 190));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Sudah di konfirmasi");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 440, -1, -1));
 
+        btn_tolak.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gambar/btn_tolak.png"))); // NOI18N
         btn_tolak.setText("Tolak");
-        getContentPane().add(btn_tolak, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 280, -1, -1));
+        btn_tolak.setBorderPainted(false);
+        btn_tolak.setContentAreaFilled(false);
+        btn_tolak.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_tolakActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btn_tolak, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 220, 130, -1));
 
         combo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021" }));
-        getContentPane().add(combo, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 120, -1, -1));
+        getContentPane().add(combo, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 110, -1, -1));
 
         btn_jumlahkan.setText("Jumlahkan");
-        getContentPane().add(btn_jumlahkan, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 420, -1, -1));
+        getContentPane().add(btn_jumlahkan, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 320, -1, -1));
 
         btn_kembali.setText("KEMBALI");
-        getContentPane().add(btn_kembali, new org.netbeans.lib.awtextra.AbsoluteConstraints(1180, 30, -1, -1));
+        getContentPane().add(btn_kembali, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 10, -1, -1));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gambar/konfirmasiii.png"))); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gambar/bg_konfirmasipemesanan.png"))); // NOI18N
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btn_tolakActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_tolakActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_tolakActionPerformed
 
     /**
      * @param args the command line arguments

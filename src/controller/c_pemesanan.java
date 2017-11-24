@@ -21,7 +21,7 @@ import model.m_peramalan;
 import model.m_pesanan;
 import view.v_adminPesanan;
 import view.v_login;
-import view.v_pesanan;
+import view.v_pemesanan;
 
 /**
  *
@@ -29,7 +29,7 @@ import view.v_pesanan;
  */
 public class c_pemesanan {
 
-    private view.v_pesanan viewPesanan;
+    private view.v_pemesanan viewPesanan;
     private view.v_login viewLogin;
 
     private model.m_pesanan modelPesanan;
@@ -38,7 +38,7 @@ public class c_pemesanan {
     private controller.c_login cLogin;
     v_adminPesanan viewAdminPesanan;
 
-    public c_pemesanan(v_pesanan viewPesanan, m_pesanan modelPesanan) throws SQLException {
+    public c_pemesanan(v_pemesanan viewPesanan, m_pesanan modelPesanan) throws SQLException {
         this.viewPesanan = viewPesanan;
         this.modelPesanan = modelPesanan;
         viewPesanan.setVisible(true);

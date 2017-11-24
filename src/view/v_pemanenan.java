@@ -7,6 +7,7 @@ package view;
 
 import com.toedter.calendar.JDateChooser;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseListener;
 import javax.swing.JLabel;
 import javax.swing.JTable;
 import javax.swing.JTextField;
@@ -18,21 +19,21 @@ import javax.swing.table.DefaultTableModel;
  */
 public class v_pemanenan extends javax.swing.JFrame {
 
-   
-
     /**
      * Creates new form v_metodetanam
      */
     public v_pemanenan() {
         initComponents();
     }
- public int getLevel() {
+
+    public int getLevel() {
         return combo.getSelectedIndex();
     }
 
     public void setLevel(int level) {
         this.combo.setSelectedIndex(level);
     }
+
     public void setInputStok(String input) {
         this.tulis_input.setText(input);
     }
@@ -40,27 +41,22 @@ public class v_pemanenan extends javax.swing.JFrame {
 //    public String getInputStok() {
 //        return this.tulis_input.getText();
 //    }
-
-   
-
-    public JTextField getTulis_input() {
-        return tulis_input;
+    public String getTulis_input() {
+        return tulis_input.getText();
     }
 
     public JDateChooser getKalendar() {
         return kalendar;
     }
 
-   
-  public void setTable(DefaultTableModel tm) {
+    public void setTable(DefaultTableModel tm) {
         jTable2.setModel(tm);
     }
-    
-    
- 
-  public void setuserLogin(String materi) {
+
+    public void setuserLogin(String materi) {
         this.total_stok.setText(materi);
     }
+
     public void addInputStokListener(ActionListener listener) {
         btn_input.addActionListener(listener);
     }
@@ -68,14 +64,79 @@ public class v_pemanenan extends javax.swing.JFrame {
     public void addKembaliListener(ActionListener listener) {
         btn_kembali.addActionListener(listener);
     }
-     public void addPeriodeListener(ActionListener listener) {
+
+    public void addPeriodeListener(ActionListener listener) {
         combo.addActionListener(listener);
     }
+
     public void cleardata() {
         tulis_input.setText("");
-       
     }
 
+    public String getValueAt(int baris, int kolom) {
+        return (String) this.jTable2.getValueAt(baris, kolom);
+    }
+
+    public int getSelectedRow() {
+        return jTable2.getSelectedRow();
+
+    }
+
+    
+    
+
+    public void addTableListener(MouseListener listener) {
+        jTable2.addMouseListener(listener);
+    }
+
+    public void addUpdateListener(ActionListener listener) {
+        btn_update.addActionListener(listener);
+    }
+
+    public void addHapusListener(ActionListener listener) {
+        btn_delete.addActionListener(listener);
+    }
+
+    public void addEditListener(ActionListener listener) {
+        btn_edit.addActionListener(listener);
+    }
+
+    public void enableEdit() {
+        btn_edit.setEnabled(true);
+    }
+
+    public void disableEdit() {
+        btn_edit.setEnabled(false);
+    }
+
+    public void enableUpdate() {
+        btn_update.setEnabled(true);
+    }
+
+    public void enableInput() {
+        btn_input.setEnabled(true);
+    }
+
+    public void disableUpdate() {
+        btn_update.setEnabled(false);
+    }
+
+    public void disableInput() {
+        btn_input.setEnabled(false);
+    }
+
+    public void enableHapus() {
+        btn_delete.setEnabled(true);
+    }
+
+    public void disableHapus() {
+        btn_delete.setEnabled(false);
+    }
+        public void setTable1(DefaultTableModel tm) {
+        jTable1.setModel(tm);
+    }
+
+   
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -96,6 +157,9 @@ public class v_pemanenan extends javax.swing.JFrame {
         total_stok = new javax.swing.JLabel();
         combo = new javax.swing.JComboBox<>();
         kalendar = new com.toedter.calendar.JDateChooser();
+        btn_edit = new javax.swing.JButton();
+        btn_update = new javax.swing.JButton();
+        btn_delete = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
@@ -115,16 +179,16 @@ public class v_pemanenan extends javax.swing.JFrame {
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         btn_kembali.setText("kembali");
-        getContentPane().add(btn_kembali, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 80, -1, -1));
+        getContentPane().add(btn_kembali, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 10, -1, -1));
 
         tulis_input.setForeground(new java.awt.Color(255, 255, 255));
         tulis_input.setOpaque(false);
-        getContentPane().add(tulis_input, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 301, 220, 30));
+        getContentPane().add(tulis_input, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 150, 120, -1));
 
-        btn_input.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/Group 71.png"))); // NOI18N
+        btn_input.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gambar/btn_input.png"))); // NOI18N
         btn_input.setBorderPainted(false);
         btn_input.setContentAreaFilled(false);
-        getContentPane().add(btn_input, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 440, -1, -1));
+        getContentPane().add(btn_input, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 390, -1, -1));
 
         jTable2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -139,7 +203,7 @@ public class v_pemanenan extends javax.swing.JFrame {
         ));
         jScrollPane2.setViewportView(jTable2);
 
-        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(582, 110, 520, 530));
+        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 110, 390, 340));
 
         total_stok.setFont(new java.awt.Font("Bebas Neue", 2, 24)); // NOI18N
         total_stok.setForeground(new java.awt.Color(255, 255, 255));
@@ -147,10 +211,23 @@ public class v_pemanenan extends javax.swing.JFrame {
         getContentPane().add(total_stok, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 80, 80, 60));
 
         combo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5" }));
-        getContentPane().add(combo, new org.netbeans.lib.awtextra.AbsoluteConstraints(386, 140, 80, 30));
-        getContentPane().add(kalendar, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 370, -1, -1));
+        getContentPane().add(combo, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 90, 80, 30));
+        getContentPane().add(kalendar, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 210, -1, -1));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/input_petani.png"))); // NOI18N
+        btn_edit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gambar/btn_edit.png"))); // NOI18N
+        btn_edit.setContentAreaFilled(false);
+        getContentPane().add(btn_edit, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 390, -1, -1));
+
+        btn_update.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gambar/btn_update.png"))); // NOI18N
+        btn_update.setContentAreaFilled(false);
+        btn_update.setEnabled(false);
+        getContentPane().add(btn_update, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 440, -1, -1));
+
+        btn_delete.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gambar/btn_hapus.png"))); // NOI18N
+        btn_delete.setContentAreaFilled(false);
+        getContentPane().add(btn_delete, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 440, -1, -1));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gambar/bg_pemanenan.png"))); // NOI18N
         jLabel1.setText("jLabel1");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
@@ -208,8 +285,11 @@ public class v_pemanenan extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btn_delete;
+    private javax.swing.JButton btn_edit;
     private javax.swing.JButton btn_input;
     private javax.swing.JButton btn_kembali;
+    private javax.swing.JButton btn_update;
     private javax.swing.JComboBox<String> combo;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
@@ -229,5 +309,4 @@ public class v_pemanenan extends javax.swing.JFrame {
         return total_stok;
     }
 
-    
 }

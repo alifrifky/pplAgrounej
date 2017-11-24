@@ -51,7 +51,7 @@ public class c_login {
                     System.out.println(theModel.getStatus());
                 } else if (theModel.getStatus().equals("2")) {
                     theView.dispose();
-                    controller.c_pemesanan m = new controller.c_pemesanan(new view.v_pesanan(), new model.m_pesanan());
+                    controller.c_pemesanan m = new controller.c_pemesanan(new view.v_pemesanan(), new model.m_pesanan());
                 } else if (theModel.getStatus().equals("3")) {
                     theView.dispose();
                     controller.c_beranda m = new controller.c_beranda(new view.v_berandaAdmin());

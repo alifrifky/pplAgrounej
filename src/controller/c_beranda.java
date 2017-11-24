@@ -12,14 +12,14 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import model.m_login;
 import model.m_pesanan;
-import model.m_stok;
+import model.m_pemanenan;
 import view.v_adminPesanan;
 import view.v_beranda;
 import view.v_berandaAdmin;
 import view.v_login;
 import view.v_pemanenan;
-import view.v_pesanan;
-import view.v_tambahUser;
+import view.v_pemesanan;
+import view.v_user;
 
 /**
  *
@@ -29,7 +29,7 @@ public class c_beranda {
 
     v_beranda viewBeranda;
     v_pemanenan viewStok;
-    v_pesanan viewPesanan;
+    v_pemesanan viewPesanan;
     v_berandaAdmin viewberandaAdmin;
 
     public c_beranda(v_beranda viewBeranda) {
@@ -44,8 +44,9 @@ public class c_beranda {
         this.viewberandaAdmin = viewberandaAdmin;
         viewberandaAdmin.setVisible(true);
         viewberandaAdmin.addUserListener(new userListener());
-        viewberandaAdmin.addPemesananListener(new pemesananListener());
    
+        viewberandaAdmin.addPemesananListener(new pemesananListener());
+        viewberandaAdmin.addStokListener(new stokListener());
 
         viewberandaAdmin.addlogoutListener(new LogoutListener());
         viewberandaAdmin.addPeramalanListener(new PeramalanListener());
@@ -70,7 +71,7 @@ public class c_beranda {
         public void actionPerformed(ActionEvent ae) {
 
             try {
-                c_stok b = new c_stok(new v_pemanenan(), new m_stok());
+                c_pemanenan b = new c_pemanenan(new v_pemanenan(), new m_pemanenan());
                 viewBeranda.dispose();
             } catch (SQLException ex) {
                 Logger.getLogger(c_beranda.class.getName()).log(Level.SEVERE, null, ex);
@@ -100,7 +101,7 @@ public class c_beranda {
         @Override
         public void actionPerformed(ActionEvent ae) {
             try {
-                controller.c_user m = new controller.c_user(new view.v_tambahUser(), new model.m_user());
+                controller.c_user m = new controller.c_user(new view.v_user(), new model.m_user());
             } catch (SQLException ex) {
                 Logger.getLogger(c_beranda.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -109,6 +110,21 @@ public class c_beranda {
         }
 
     }
+    private class stokListener implements ActionListener {
+
+        @Override
+        public void actionPerformed(ActionEvent ae) {
+            try {
+                controller.c_pemanenan m = new controller.c_pemanenan(new view.v_stok(), new model.m_pemanenan());
+            } catch (SQLException ex) {
+                Logger.getLogger(c_beranda.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            viewberandaAdmin.dispose();
+
+        }
+
+    }
+    
 
     private class PeramalanListener implements ActionListener {
 

@@ -13,13 +13,13 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author Alif
  */
-public class m_stok {
+public class m_pemanenan {
 
     private koneksi kon;
     private String status_user;
     public static String hitung;
 
-    public m_stok() throws SQLException {
+    public m_pemanenan() throws SQLException {
         kon = new koneksi("root", "", "tembakau");
     }
 
@@ -70,5 +70,18 @@ public class m_stok {
             hitung = rs.getString("stok");
         }
         return hitung;
+    }
+     
+
+    public void update(String id_pemanenan,String total) throws SQLException {
+        String query = "UPDATE stok SET jumlah_stok ='" + total + "' WHERE id_stok =" + id_pemanenan;
+        kon.execute(query);
+        System.out.println(query);
+    }
+
+    public void delete(String id_pemanenan) throws SQLException {
+        String query = "DELETE FROM stok where id_user ='" + id_pemanenan + "'";
+        
+        kon.execute(query);
     }
 }

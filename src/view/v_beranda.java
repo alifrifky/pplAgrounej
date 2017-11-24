@@ -41,14 +41,13 @@ public class v_beranda extends javax.swing.JFrame {
     private void initComponents() {
 
         btn_inputStok = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
         btn_logout = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        btn_inputStok.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/btn_inputan.png"))); // NOI18N
+        btn_inputStok.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gambar/btn_pemanenan.png"))); // NOI18N
         btn_inputStok.setBorderPainted(false);
         btn_inputStok.setContentAreaFilled(false);
         btn_inputStok.addActionListener(new java.awt.event.ActionListener() {
@@ -56,17 +55,14 @@ public class v_beranda extends javax.swing.JFrame {
                 btn_inputStokActionPerformed(evt);
             }
         });
-        getContentPane().add(btn_inputStok, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 230, 350, 170));
-
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/STOK.png"))); // NOI18N
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 400, -1, 90));
+        getContentPane().add(btn_inputStok, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 360, 350, 170));
 
         btn_logout.setText("logout");
-        getContentPane().add(btn_logout, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 80, -1, 50));
+        getContentPane().add(btn_logout, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 10, 80, 20));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/beranda_petani.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gambar/bg_homepetani.png"))); // NOI18N
         jLabel1.setText("jLabel1");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 900, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -114,6 +110,5 @@ public class v_beranda extends javax.swing.JFrame {
     private javax.swing.JButton btn_inputStok;
     private javax.swing.JButton btn_logout;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     // End of variables declaration//GEN-END:variables
 }

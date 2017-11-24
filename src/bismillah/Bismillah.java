@@ -7,7 +7,7 @@ package bismillah;
 
 import controller.c_login;
 import controller.c_peramalan;
-import controller.c_stok;
+import controller.c_pemanenan;
 import controller.c_user;
 import java.sql.SQLException;
 import java.util.logging.Level;
@@ -15,12 +15,12 @@ import java.util.logging.Logger;
 import javax.swing.table.TableModel;
 import model.m_login;
 import model.m_peramalan;
-import model.m_stok;
+import model.m_pemanenan;
 import model.m_user;
 import view.v_pemanenan;
 import view.v_login;
 import view.v_peramalan;
-import view.v_tambahUser;
+import view.v_user;
 
 /**
  *

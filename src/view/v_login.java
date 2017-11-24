@@ -59,12 +59,12 @@ public class v_login extends javax.swing.JFrame {
         tulis_username.setForeground(new java.awt.Color(255, 255, 255));
         tulis_username.setCaretColor(new java.awt.Color(255, 255, 255));
         tulis_username.setOpaque(false);
-        getContentPane().add(tulis_username, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 260, 340, 30));
+        getContentPane().add(tulis_username, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 180, 150, 30));
 
-        btn_login.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/btn_login.png"))); // NOI18N
+        btn_login.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gambar/btn_login.png"))); // NOI18N
         btn_login.setBorderPainted(false);
         btn_login.setContentAreaFilled(false);
-        getContentPane().add(btn_login, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 390, 180, 70));
+        getContentPane().add(btn_login, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 310, 180, 70));
 
         tulis_password.setForeground(new java.awt.Color(255, 255, 255));
         tulis_password.setOpaque(false);
@@ -73,10 +73,10 @@ public class v_login extends javax.swing.JFrame {
                 tulis_passwordActionPerformed(evt);
             }
         });
-        getContentPane().add(tulis_password, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 320, 340, 30));
+        getContentPane().add(tulis_password, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 250, 150, 30));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/login.png"))); // NOI18N
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1270, 710));
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gambar/bg_login.png"))); // NOI18N
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -50, 1270, 710));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

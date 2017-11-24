@@ -21,12 +21,12 @@ import java.util.Date;
  *
  * @author Alif
  */
-public class v_pesanan extends javax.swing.JFrame {
+public class v_pemesanan extends javax.swing.JFrame {
 
     /**
      * Creates new form v_perusahaan
      */
-    public v_pesanan() {
+    public v_pemesanan() {
         initComponents();
 
     }
@@ -35,9 +35,6 @@ public class v_pesanan extends javax.swing.JFrame {
         return kalender;
     }
 
-    public void setTable1(DefaultTableModel tm) {
-        jTable1.setModel(tm);
-    }
 
     public JLabel getTotal_stok() {
         return jLabel1;
@@ -68,12 +65,8 @@ public class v_pesanan extends javax.swing.JFrame {
         btn_keluar.addActionListener(listener);
     }
 
-    public void addUpdateListener(ActionListener listener) {
-        btn_update.addActionListener(listener);
-    }
-
-    public void addEditListener(ActionListener listener) {
-        btn_edit.addActionListener(listener);
+    public void setTable1(DefaultTableModel tm) {
+        jTable1.setModel(tm);
     }
 
     public void setTable(DefaultTableModel table) {
@@ -87,7 +80,18 @@ public class v_pesanan extends javax.swing.JFrame {
     public String getValueAt(int baris, int kolom) {
         return (String) this.jTable1.getValueAt(baris, kolom);
     }
+     public void addTableListener(MouseListener listener) {
+        jTable1.addMouseListener(listener);
+    }
+ 
 
+    public void addUpdateListener(ActionListener listener) {
+        btn_update.addActionListener(listener);
+    }
+
+    public void addEditListener(ActionListener listener) {
+        btn_edit.addActionListener(listener);
+    }
     public void enableEdit() {
         btn_edit.setEnabled(true);
     }
@@ -112,10 +116,7 @@ public class v_pesanan extends javax.swing.JFrame {
         btn_pesan.setEnabled(false);
     }
 
-    public void addTableListener(MouseListener listener) {
-        jTable1.addMouseListener(listener);
-    }
- 
+   
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -142,12 +143,12 @@ public class v_pesanan extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("jLabel1");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 230, -1, -1));
-        getContentPane().add(tulis_pesanan, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 320, 200, -1));
+        getContentPane().add(tulis_pesanan, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 160, 120, -1));
 
-        btn_pesan.setIcon(new javax.swing.ImageIcon("C:\\Users\\Alif\\Downloads\\expotan\\1\\pesan.png")); // NOI18N
+        btn_pesan.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gambar/btn_input.png"))); // NOI18N
         btn_pesan.setBorderPainted(false);
         btn_pesan.setContentAreaFilled(false);
-        getContentPane().add(btn_pesan, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 480, -1, -1));
+        getContentPane().add(btn_pesan, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 280, -1, -1));
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -162,21 +163,23 @@ public class v_pesanan extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(jTable1);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 160, -1, -1));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 110, -1, -1));
 
         btn_keluar.setText("Logout");
-        getContentPane().add(btn_keluar, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 110, -1, -1));
+        getContentPane().add(btn_keluar, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 10, -1, -1));
 
-        btn_edit.setText("Edit");
+        btn_edit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gambar/btn_edit.png"))); // NOI18N
+        btn_edit.setContentAreaFilled(false);
         btn_edit.setEnabled(false);
-        getContentPane().add(btn_edit, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 520, -1, -1));
+        getContentPane().add(btn_edit, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 280, -1, -1));
 
-        btn_update.setText("update");
+        btn_update.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gambar/btn_update.png"))); // NOI18N
+        btn_update.setContentAreaFilled(false);
         btn_update.setEnabled(false);
-        getContentPane().add(btn_update, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 520, -1, -1));
-        getContentPane().add(kalender, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 370, -1, -1));
+        getContentPane().add(btn_update, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 320, -1, -1));
+        getContentPane().add(kalender, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 210, -1, -1));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\Alif\\Downloads\\expotan\\1\\pesanan.png")); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gambar/bg_pemesanan.png"))); // NOI18N
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, -1, -1));
 
         pack();
@@ -199,21 +202,23 @@ public class v_pesanan extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(v_pesanan.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(v_pemesanan.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(v_pesanan.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(v_pemesanan.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(v_pesanan.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(v_pemesanan.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(v_pesanan.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(v_pemesanan.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new v_pesanan().setVisible(true);
+                new v_pemesanan().setVisible(true);
             }
         });
     }
