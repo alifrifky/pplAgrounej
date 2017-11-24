@@ -189,8 +189,9 @@ public class v_adminPesanan extends javax.swing.JFrame {
         btn_jumlahkan.setText("Jumlahkan");
         getContentPane().add(btn_jumlahkan, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 320, -1, -1));
 
-        btn_kembali.setText("KEMBALI");
-        getContentPane().add(btn_kembali, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 10, -1, -1));
+        btn_kembali.setIcon(new javax.swing.ImageIcon("E:\\Kuliah\\Semester 5\\PPL AGRO\\UI PPL\\btn_kembali.png")); // NOI18N
+        btn_kembali.setContentAreaFilled(false);
+        getContentPane().add(btn_kembali, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 0, -1, -1));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gambar/bg_konfirmasipemesanan.png"))); // NOI18N
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));

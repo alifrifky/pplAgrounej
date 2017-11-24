@@ -165,8 +165,9 @@ public class v_pemesanan extends javax.swing.JFrame {
 
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 110, -1, -1));
 
-        btn_keluar.setText("Logout");
-        getContentPane().add(btn_keluar, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 10, -1, -1));
+        btn_keluar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/btn_logout.png"))); // NOI18N
+        btn_keluar.setContentAreaFilled(false);
+        getContentPane().add(btn_keluar, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 0, -1, -1));
 
         btn_edit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gambar/btn_edit.png"))); // NOI18N
         btn_edit.setContentAreaFilled(false);

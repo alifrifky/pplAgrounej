@@ -43,10 +43,10 @@ public class v_user extends javax.swing.JFrame {
         btn_hapus = new javax.swing.JButton();
         tulis_password = new javax.swing.JTextField();
         btn_update = new javax.swing.JButton();
-        btn_kembali = new javax.swing.JButton();
         tulis_username = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
+        btn_kembali = new javax.swing.JButton();
         id = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -93,9 +93,6 @@ public class v_user extends javax.swing.JFrame {
         btn_update.setContentAreaFilled(false);
         btn_update.setEnabled(false);
         getContentPane().add(btn_update, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 470, -1, -1));
-
-        btn_kembali.setText("Kembali");
-        getContentPane().add(btn_kembali, new org.netbeans.lib.awtextra.AbsoluteConstraints(2216, 6, -1, -1));
         getContentPane().add(tulis_username, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 180, 150, -1));
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
@@ -112,6 +109,10 @@ public class v_user extends javax.swing.JFrame {
         jScrollPane1.setViewportView(jTable1);
 
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 100, 400, -1));
+
+        btn_kembali.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/btn_kembali.png"))); // NOI18N
+        btn_kembali.setContentAreaFilled(false);
+        getContentPane().add(btn_kembali, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 0, -1, -1));
 
         id.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gambar/bg_user.png"))); // NOI18N
         getContentPane().add(id, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));

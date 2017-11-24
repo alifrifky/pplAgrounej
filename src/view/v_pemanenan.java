@@ -178,8 +178,9 @@ public class v_pemanenan extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        btn_kembali.setText("kembali");
-        getContentPane().add(btn_kembali, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 10, -1, -1));
+        btn_kembali.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/btn_kembali.png"))); // NOI18N
+        btn_kembali.setContentAreaFilled(false);
+        getContentPane().add(btn_kembali, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 0, -1, -1));
 
         tulis_input.setForeground(new java.awt.Color(255, 255, 255));
         tulis_input.setOpaque(false);

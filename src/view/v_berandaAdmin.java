@@ -52,8 +52,9 @@ public class v_berandaAdmin extends javax.swing.JFrame {
         btn_keluar.setText("Logout");
         getContentPane().add(btn_keluar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1263, 822, -1, -1));
 
-        btn_logout.setText("Logout");
-        getContentPane().add(btn_logout, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 10, -1, -1));
+        btn_logout.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/btn_logout.png"))); // NOI18N
+        btn_logout.setContentAreaFilled(false);
+        getContentPane().add(btn_logout, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 0, -1, -1));
 
         btn_peramalan.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gambar/btn_peramalan.png"))); // NOI18N
         btn_peramalan.setContentAreaFilled(false);
@@ -69,7 +70,7 @@ public class v_berandaAdmin extends javax.swing.JFrame {
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 40, 80, 40));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gambar/bg_homepetani.png"))); // NOI18N
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 4, -1, -1));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, -6, -1, 610));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

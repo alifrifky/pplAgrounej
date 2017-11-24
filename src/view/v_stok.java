@@ -85,8 +85,9 @@ public class v_stok extends javax.swing.JFrame {
         stok.setText("_");
         getContentPane().add(stok, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, 140, 60));
 
-        btn_kembali.setText("kembali");
-        getContentPane().add(btn_kembali, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 10, -1, -1));
+        btn_kembali.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/btn_kembali.png"))); // NOI18N
+        btn_kembali.setContentAreaFilled(false);
+        getContentPane().add(btn_kembali, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 0, -1, -1));
 
         jLabel1.setIcon(new javax.swing.ImageIcon("E:\\Kuliah\\Semester 5\\PPL AGRO\\UI PPL\\bg_monitor.png")); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));

@@ -57,8 +57,9 @@ public class v_beranda extends javax.swing.JFrame {
         });
         getContentPane().add(btn_inputStok, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 360, 350, 170));
 
-        btn_logout.setText("logout");
-        getContentPane().add(btn_logout, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 10, 80, 20));
+        btn_logout.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/btn_logout.png"))); // NOI18N
+        btn_logout.setContentAreaFilled(false);
+        getContentPane().add(btn_logout, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 0, -1, -1));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gambar/bg_homepetani.png"))); // NOI18N
         jLabel1.setText("jLabel1");

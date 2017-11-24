@@ -112,8 +112,10 @@ public int getRowCount() {
         btn_peramalan.setContentAreaFilled(false);
         getContentPane().add(btn_peramalan, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 230, -1, -1));
 
-        btn_kembali.setText("kembali");
-        getContentPane().add(btn_kembali, new org.netbeans.lib.awtextra.AbsoluteConstraints(654, 11, -1, -1));
+        btn_kembali.setIcon(new javax.swing.ImageIcon("E:\\Kuliah\\Semester 5\\PPL AGRO\\UI PPL\\btn_kembali.png")); // NOI18N
+        btn_kembali.setBorderPainted(false);
+        btn_kembali.setContentAreaFilled(false);
+        getContentPane().add(btn_kembali, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 0, -1, -1));
 
         nilai.setFont(new java.awt.Font("Segoe UI", 2, 24)); // NOI18N
         nilai.setForeground(new java.awt.Color(255, 204, 0));
@@ -126,7 +128,6 @@ public int getRowCount() {
         getContentPane().add(nilai1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 340, 110, 30));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gambar/bg_peramalan.png"))); // NOI18N
-        jLabel1.setText("jLabel1");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();

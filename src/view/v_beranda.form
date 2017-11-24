@@ -44,11 +44,14 @@
     </Component>
     <Component class="javax.swing.JButton" name="btn_logout">
       <Properties>
-        <Property name="text" type="java.lang.String" value="logout"/>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/view/btn_logout.png"/>
+        </Property>
+        <Property name="contentAreaFilled" type="boolean" value="false"/>
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="800" y="10" width="80" height="20"/>
+          <AbsoluteConstraints x="790" y="0" width="-1" height="-1"/>
         </Constraint>
       </Constraints>
     </Component>
