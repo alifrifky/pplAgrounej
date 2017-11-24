@@ -43,14 +43,14 @@ public class c_peramalan {
         public void actionPerformed(ActionEvent ae) {
             int jumlahBaris = viewPeramalan.getRowCount();
             float Peramalan = 0;
-            float jumlahStok, nilaiPeramalan;
+            float pemesanan, nilaiPeramalan;
             int baris = viewPeramalan.getCombo().getSelectedIndex();
 
-            jumlahStok = Integer.parseInt(viewPeramalan.getValueAt((baris - 1), 1));
-            System.out.println("jumlahstok" + jumlahStok);
+            pemesanan = Integer.parseInt(viewPeramalan.getValueAt((baris - 1), 1));
+            System.out.println("jumlahstok" + pemesanan);
             nilaiPeramalan = Float.parseFloat(viewPeramalan.getValueAt((baris - 1), 2));
             System.out.println("peramalan" + nilaiPeramalan);
-            Peramalan = (float) ((0.9 * jumlahStok) + ((0.1) * nilaiPeramalan));
+            Peramalan = (float) ((0.9 * pemesanan) + ((0.1) * nilaiPeramalan));
             System.out.println(Peramalan);
 
             try {

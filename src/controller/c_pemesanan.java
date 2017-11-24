@@ -137,7 +137,7 @@ public class c_pemesanan {
         @Override
         public void actionPerformed(ActionEvent ae) {
             try {
-//                modelPesanan.konfirmasi(viewAdminPesanan.getSelectedID_pesanan());
+                modelPesanan.konfirmasi(viewAdminPesanan.getSelectedID_pesanan());
                 System.out.println(viewAdminPesanan.getSelectedID_pesanan());
                 viewAdminPesanan.setTable1(modelPesanan.gettabelbelum(Integer.parseInt((String) viewAdminPesanan.getCombo().getSelectedItem())));
                 viewAdminPesanan.setTable2(modelPesanan.gettabelsudah(Integer.parseInt((String) viewAdminPesanan.getCombo().getSelectedItem())));

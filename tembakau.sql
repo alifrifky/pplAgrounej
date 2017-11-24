@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 12, 2017 at 04:00 AM
+-- Generation Time: Nov 24, 2017 at 01:33 PM
 -- Server version: 10.1.26-MariaDB
 -- PHP Version: 7.1.9
 
@@ -25,6 +25,30 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `peramalan`
+--
+
+CREATE TABLE `peramalan` (
+  `id_peramalan` bigint(20) UNSIGNED NOT NULL,
+  `total_stok` int(8) NOT NULL,
+  `hasil_peramalan` float NOT NULL,
+  `periode` varchar(4) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `peramalan`
+--
+
+INSERT INTO `peramalan` (`id_peramalan`, `total_stok`, `hasil_peramalan`, `periode`) VALUES
+(1, 1, 1, '2014'),
+(2, 300, 1, '2015'),
+(3, 195, 270.1, '2016'),
+(4, 227, 202.51, '2017'),
+(5, 1, 224.551, '2018');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `pesanan`
 --
 
@@ -33,21 +57,28 @@ CREATE TABLE `pesanan` (
   `jumlah_pesanan` int(64) NOT NULL,
   `tanggal_pesanan` date NOT NULL,
   `id_status` varchar(4) NOT NULL,
-  `id_user` int(100) NOT NULL
+  `id_user` int(100) NOT NULL,
+  `periode` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `pesanan`
 --
 
-INSERT INTO `pesanan` (`id_pesanan`, `jumlah_pesanan`, `tanggal_pesanan`, `id_status`, `id_user`) VALUES
-(1, 0, '2017-11-06', '3', 1),
-(2, 1000, '2017-11-07', '2', 1),
-(3, 100, '2017-11-13', '1', 1),
-(4, 1000, '2017-11-06', '2', 1),
-(5, 100, '2017-11-13', '1', 1),
-(6, 1000, '2017-11-06', '3', 1),
-(7, 166, '1111-11-11', '1', 4);
+INSERT INTO `pesanan` (`id_pesanan`, `jumlah_pesanan`, `tanggal_pesanan`, `id_status`, `id_user`, `periode`) VALUES
+(1, 12, '2017-11-24', '2', 3, 2017),
+(2, 13, '2017-11-24', '2', 3, 2017),
+(3, 11, '2017-11-24', '2', 3, 2017),
+(4, 10, '2017-11-24', '2', 3, 2017),
+(5, 100, '2017-11-24', '2', 3, 2017),
+(6, 28, '2017-11-24', '2', 3, 2017),
+(7, 29, '2017-11-24', '2', 3, 2017),
+(8, 24, '2017-11-24', '2', 3, 2017),
+(9, 33, '2016-11-24', '2', 3, 2016),
+(10, 32, '2016-11-24', '2', 3, 2016),
+(11, 130, '2016-11-24', '2', 3, 2016),
+(12, 300, '2015-11-24', '2', 3, 2015),
+(13, 100, '2017-11-17', '3', 3, 2017);
 
 -- --------------------------------------------------------
 
@@ -83,23 +114,6 @@ CREATE TABLE `stok` (
   `periode` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `stok`
---
-
-INSERT INTO `stok` (`id_stok`, `jumlah_stok`, `tanggal`, `id_user`, `periode`) VALUES
-(29, 1111, '0111-11-11', 1, '1'),
-(30, 1111, '1111-11-11', 1, '1'),
-(31, 1111, '1111-11-11', 1, '1'),
-(32, 100, '1111-11-11', 1, '1'),
-(33, 100, '1111-11-11', 1, '1'),
-(34, 100, '1111-11-11', 1, '1'),
-(35, 100, '1111-11-11', 1, '1'),
-(36, 100, '1111-11-11', 1, '2'),
-(37, 100, '1111-11-11', 1, '3'),
-(38, 100, '1111-11-11', 1, '2'),
-(39, 100, '1111-11-11', 1, '1');
-
 -- --------------------------------------------------------
 
 --
@@ -117,7 +131,7 @@ CREATE TABLE `updatestok` (
 --
 
 INSERT INTO `updatestok` (`id_stoku`, `stok`, `status`) VALUES
-(1, 14652, '');
+(1, -722, '');
 
 -- --------------------------------------------------------
 
@@ -142,12 +156,12 @@ INSERT INTO `user` (`id_user`, `user_name`, `password`, `nama_user`, `alamat`, `
 (1, '1', '1', 'tukinem', '', 1),
 (3, '3', '3', 'tok dalang', '', 2),
 (4, '4', '4', 'bawon', '', 2),
-(6, 'a', 'a', 'a', '', 3),
 (7, 'alifri', 'alifrifk', 'alifrifky', 'ali', 2),
 (11, 'perusahaan', 'perusahaan', 'perusahaan', 'perusahaan', 2),
 (12, 'admin', 'admin', 'admin', 'admin', 3),
 (13, 'petani', 'petani', 'petani', 'petani', 1),
-(14, '120', '120', '120', 'aalal', 2);
+(14, '120', '120', '120', 'aalal', 2),
+(15, 'a', 'a', 'a', 'a', 3);
 
 -- --------------------------------------------------------
 
@@ -174,13 +188,21 @@ INSERT INTO `user_level` (`id_level`, `nama_level`) VALUES
 --
 
 --
+-- Indexes for table `peramalan`
+--
+ALTER TABLE `peramalan`
+  ADD PRIMARY KEY (`id_peramalan`),
+  ADD UNIQUE KEY `id_peramalan` (`id_peramalan`);
+
+--
 -- Indexes for table `pesanan`
 --
 ALTER TABLE `pesanan`
   ADD PRIMARY KEY (`id_pesanan`),
   ADD UNIQUE KEY `id_pesanan` (`id_pesanan`),
   ADD KEY `id_user` (`id_user`),
-  ADD KEY `status` (`id_status`);
+  ADD KEY `status` (`id_status`),
+  ADD KEY `id_periode` (`periode`);
 
 --
 -- Indexes for table `status`
@@ -222,16 +244,22 @@ ALTER TABLE `user_level`
 --
 
 --
+-- AUTO_INCREMENT for table `peramalan`
+--
+ALTER TABLE `peramalan`
+  MODIFY `id_peramalan` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
 -- AUTO_INCREMENT for table `pesanan`
 --
 ALTER TABLE `pesanan`
-  MODIFY `id_pesanan` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_pesanan` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `stok`
 --
 ALTER TABLE `stok`
-  MODIFY `id_stok` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
+  MODIFY `id_stok` int(8) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `updatestok`
@@ -243,7 +271,7 @@ ALTER TABLE `updatestok`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id_user` int(64) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id_user` int(64) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- Constraints for dumped tables
