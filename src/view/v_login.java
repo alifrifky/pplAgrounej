@@ -56,27 +56,32 @@ public class v_login extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        tulis_username.setForeground(new java.awt.Color(255, 255, 255));
+        tulis_username.setBackground(new java.awt.Color(0, 0, 0));
         tulis_username.setCaretColor(new java.awt.Color(255, 255, 255));
         tulis_username.setOpaque(false);
-        getContentPane().add(tulis_username, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 180, 150, 30));
+        tulis_username.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tulis_usernameActionPerformed(evt);
+            }
+        });
+        getContentPane().add(tulis_username, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 150, 150, 30));
 
         btn_login.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gambar/btn_login.png"))); // NOI18N
         btn_login.setBorderPainted(false);
         btn_login.setContentAreaFilled(false);
         getContentPane().add(btn_login, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 310, 180, 70));
 
-        tulis_password.setForeground(new java.awt.Color(255, 255, 255));
+        tulis_password.setBackground(new java.awt.Color(0, 0, 0));
         tulis_password.setOpaque(false);
         tulis_password.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tulis_passwordActionPerformed(evt);
             }
         });
-        getContentPane().add(tulis_password, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 250, 150, 30));
+        getContentPane().add(tulis_password, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 210, 150, 30));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gambar/bg_login.png"))); // NOI18N
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -50, 1270, 710));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 900, 540));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -84,6 +89,10 @@ public class v_login extends javax.swing.JFrame {
     private void tulis_passwordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tulis_passwordActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_tulis_passwordActionPerformed
+
+    private void tulis_usernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tulis_usernameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tulis_usernameActionPerformed
 
     /**
      * @param args the command line arguments

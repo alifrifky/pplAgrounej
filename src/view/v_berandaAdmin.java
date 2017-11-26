@@ -41,39 +41,48 @@ public class v_berandaAdmin extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        btn_pemesanan.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gambar/btn_pemanenan.png"))); // NOI18N
+        btn_pemesanan.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gambar/btn_pemesanan.png"))); // NOI18N
         btn_pemesanan.setContentAreaFilled(false);
-        getContentPane().add(btn_pemesanan, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 380, -1, -1));
+        getContentPane().add(btn_pemesanan, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 430, 150, 150));
 
         btn_user.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gambar/btn_user.png"))); // NOI18N
         btn_user.setContentAreaFilled(false);
-        getContentPane().add(btn_user, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 380, -1, -1));
+        btn_user.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_userActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btn_user, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 310, 150, 150));
 
         btn_keluar.setText("Logout");
         getContentPane().add(btn_keluar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1263, 822, -1, -1));
 
         btn_logout.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/btn_logout.png"))); // NOI18N
         btn_logout.setContentAreaFilled(false);
-        getContentPane().add(btn_logout, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 0, -1, -1));
+        getContentPane().add(btn_logout, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 0, -1, -1));
 
         btn_peramalan.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gambar/btn_peramalan.png"))); // NOI18N
         btn_peramalan.setContentAreaFilled(false);
-        getContentPane().add(btn_peramalan, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 380, -1, -1));
+        getContentPane().add(btn_peramalan, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 430, 150, 150));
 
         btn_stok.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gambar/btn_monitoring.png"))); // NOI18N
         btn_stok.setContentAreaFilled(false);
-        getContentPane().add(btn_stok, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 380, -1, -1));
+        getContentPane().add(btn_stok, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 310, 150, 150));
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 2, 24)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 153, 0));
         jLabel2.setText("ADMIN");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 40, 80, 40));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 30, 80, 40));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gambar/bg_homepetani.png"))); // NOI18N
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, -6, -1, 610));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 890, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btn_userActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_userActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_userActionPerformed
     public void addUserListener(ActionListener listener) {
         btn_user.addActionListener(listener);
     }

@@ -119,13 +119,13 @@ public int getRowCount() {
 
         nilai.setFont(new java.awt.Font("Segoe UI", 2, 24)); // NOI18N
         nilai.setForeground(new java.awt.Color(255, 204, 0));
-        nilai.setText("Nilai Peramalan");
-        getContentPane().add(nilai, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 300, 180, 30));
+        nilai.setText("_");
+        getContentPane().add(nilai, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 320, 180, 30));
 
         nilai1.setFont(new java.awt.Font("Segoe UI", 2, 24)); // NOI18N
         nilai1.setForeground(new java.awt.Color(255, 255, 255));
-        nilai1.setText("jLabel1");
-        getContentPane().add(nilai1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 340, 110, 30));
+        nilai1.setText("Nilai Peramalan");
+        getContentPane().add(nilai1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 290, 180, 30));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gambar/bg_peramalan.png"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));

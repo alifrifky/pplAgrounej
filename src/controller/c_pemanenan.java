@@ -16,6 +16,7 @@ import view.v_pemanenan;
 import java.text.SimpleDateFormat;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 import model.m_login;
 import view.v_stok;
@@ -173,6 +174,7 @@ public class c_pemanenan {
                 viewPemanenan.disableUpdate();
                 viewPemanenan.enableInput();
             } catch (SQLException ex) {
+                JOptionPane.showMessageDialog(viewPemanenan, "masukkan dengan benar");
                 Logger.getLogger(c_user.class.getName()).log(Level.SEVERE, null, ex);
             }
         }

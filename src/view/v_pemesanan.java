@@ -143,7 +143,7 @@ public class v_pemesanan extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("jLabel1");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 230, -1, -1));
-        getContentPane().add(tulis_pesanan, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 160, 120, -1));
+        getContentPane().add(tulis_pesanan, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 160, 120, -1));
 
         btn_pesan.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gambar/btn_input.png"))); // NOI18N
         btn_pesan.setBorderPainted(false);
@@ -167,7 +167,7 @@ public class v_pemesanan extends javax.swing.JFrame {
 
         btn_keluar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/btn_logout.png"))); // NOI18N
         btn_keluar.setContentAreaFilled(false);
-        getContentPane().add(btn_keluar, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 0, -1, -1));
+        getContentPane().add(btn_keluar, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 0, -1, -1));
 
         btn_edit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gambar/btn_edit.png"))); // NOI18N
         btn_edit.setContentAreaFilled(false);
@@ -178,10 +178,10 @@ public class v_pemesanan extends javax.swing.JFrame {
         btn_update.setContentAreaFilled(false);
         btn_update.setEnabled(false);
         getContentPane().add(btn_update, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 320, -1, -1));
-        getContentPane().add(kalender, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 210, -1, -1));
+        getContentPane().add(kalender, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 210, -1, -1));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gambar/bg_pemesanan.png"))); // NOI18N
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, -1, -1));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 900, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

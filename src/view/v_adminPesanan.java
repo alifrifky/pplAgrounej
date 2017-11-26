@@ -148,9 +148,8 @@ public class v_adminPesanan extends javax.swing.JFrame {
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 70, 380, 210));
 
         id.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        id.setForeground(new java.awt.Color(255, 255, 255));
         id.setText("belum di konfirmasi");
-        getContentPane().add(id, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 120, -1, -1));
+        getContentPane().add(id, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 30, -1, -1));
 
         jTable2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -165,12 +164,11 @@ public class v_adminPesanan extends javax.swing.JFrame {
         ));
         jScrollPane2.setViewportView(jTable2);
 
-        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 330, 390, 190));
+        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 350, 390, 190));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Sudah di konfirmasi");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 440, -1, -1));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 310, -1, -1));
 
         btn_tolak.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gambar/btn_tolak.png"))); // NOI18N
         btn_tolak.setText("Tolak");

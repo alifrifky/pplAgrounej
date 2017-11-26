@@ -82,6 +82,7 @@ public class v_stok extends javax.swing.JFrame {
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 110, 400, 230));
 
         stok.setFont(new java.awt.Font("Tahoma", 2, 48)); // NOI18N
+        stok.setForeground(new java.awt.Color(255, 255, 255));
         stok.setText("_");
         getContentPane().add(stok, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, 140, 60));
 
@@ -90,7 +91,7 @@ public class v_stok extends javax.swing.JFrame {
         getContentPane().add(btn_kembali, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 0, -1, -1));
 
         jLabel1.setIcon(new javax.swing.ImageIcon("E:\\Kuliah\\Semester 5\\PPL AGRO\\UI PPL\\bg_monitor.png")); // NOI18N
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 900, 600));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
