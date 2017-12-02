@@ -45,8 +45,6 @@ public class m_peramalan {
     public void peramalan(float peramalan, String periode) throws SQLException {
         String query = "UPDATE peramalan SET hasil_peramalan =" + peramalan + "where periode=" + periode;
         kon.execute(query);
-//        peramlan = peramalan;
-        System.out.println(query);
     }
 
 }

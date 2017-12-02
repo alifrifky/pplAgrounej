@@ -18,7 +18,7 @@ import javax.swing.JTextField;
 import javax.swing.table.TableModel;
 import model.m_login;
 import model.m_peramalan;
-import model.m_pesanan;
+import model.m_pemesanan;
 import view.v_adminPesanan;
 import view.v_login;
 import view.v_pemesanan;
@@ -32,13 +32,13 @@ public class c_pemesanan {
     private view.v_pemesanan viewPesanan;
     private view.v_login viewLogin;
 
-    private model.m_pesanan modelPesanan;
+    private model.m_pemesanan modelPesanan;
     public static String jumlahStok;
 
     private controller.c_login cLogin;
     v_adminPesanan viewAdminPesanan;
 
-    public c_pemesanan(v_pemesanan viewPesanan, m_pesanan modelPesanan) throws SQLException {
+    public c_pemesanan(v_pemesanan viewPesanan, m_pemesanan modelPesanan) throws SQLException {
         this.viewPesanan = viewPesanan;
         this.modelPesanan = modelPesanan;
         viewPesanan.setVisible(true);
@@ -51,7 +51,7 @@ public class c_pemesanan {
 
     }
 
-    public c_pemesanan(v_adminPesanan viewAdminPesanan, m_pesanan modelPesanan) throws SQLException {
+    public c_pemesanan(v_adminPesanan viewAdminPesanan, m_pemesanan modelPesanan) throws SQLException {
         this.viewAdminPesanan = viewAdminPesanan;
         this.modelPesanan = modelPesanan;
 
@@ -107,14 +107,9 @@ public class c_pemesanan {
 
         @Override
         public void mouseClicked(MouseEvent me) {
-            int baris = viewPesanan.getSelectedRow();
-            String nilai = viewPesanan.getValueAt(baris, 3);
-            if (nilai=="sudah dikonfirmasi") {
-                viewPesanan.disableEdit();
-                System.out.println(nilai);
-            } else {
+            
                 viewPesanan.enableEdit();
-            }
+            
         }
 
         @Override
@@ -145,7 +140,7 @@ public class c_pemesanan {
         public void actionPerformed(ActionEvent ae) {
             try {
                 modelPesanan.konfirmasi(viewAdminPesanan.getSelectedID_pesanan());
-                System.out.println(viewAdminPesanan.getSelectedID_pesanan());
+            
                 viewAdminPesanan.setTable1(modelPesanan.gettabelbelum(Integer.parseInt((String) viewAdminPesanan.getCombo().getSelectedItem())));
                 viewAdminPesanan.setTable2(modelPesanan.gettabelsudah(Integer.parseInt((String) viewAdminPesanan.getCombo().getSelectedItem())));
             } catch (SQLException ex) {
@@ -231,9 +226,7 @@ public class c_pemesanan {
                 Logger.getLogger(c_user.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
-
     }
-
     private class jumlahkanListener implements ActionListener {
 
         @Override

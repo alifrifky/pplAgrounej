@@ -31,7 +31,6 @@ public class v_berandaAdmin extends javax.swing.JFrame {
 
         btn_pemesanan = new javax.swing.JButton();
         btn_user = new javax.swing.JButton();
-        btn_keluar = new javax.swing.JButton();
         btn_logout = new javax.swing.JButton();
         btn_peramalan = new javax.swing.JButton();
         btn_stok = new javax.swing.JToggleButton();
@@ -54,12 +53,9 @@ public class v_berandaAdmin extends javax.swing.JFrame {
         });
         getContentPane().add(btn_user, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 310, 150, 150));
 
-        btn_keluar.setText("Logout");
-        getContentPane().add(btn_keluar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1263, 822, -1, -1));
-
         btn_logout.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/btn_logout.png"))); // NOI18N
         btn_logout.setContentAreaFilled(false);
-        getContentPane().add(btn_logout, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 0, -1, -1));
+        getContentPane().add(btn_logout, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 0, -1, -1));
 
         btn_peramalan.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gambar/btn_peramalan.png"))); // NOI18N
         btn_peramalan.setContentAreaFilled(false);
@@ -93,9 +89,7 @@ public class v_berandaAdmin extends javax.swing.JFrame {
      public void addPeramalanListener(ActionListener listener) {
         btn_peramalan.addActionListener(listener);
     }
-     public void addKeluarListener(ActionListener listener) {
-        btn_keluar.addActionListener(listener);
-    }
+   
       public void addlogoutListener(ActionListener listener) {
         btn_logout.addActionListener(listener);
     }
@@ -139,7 +133,6 @@ public class v_berandaAdmin extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btn_keluar;
     private javax.swing.JButton btn_logout;
     private javax.swing.JButton btn_pemesanan;
     private javax.swing.JButton btn_peramalan;

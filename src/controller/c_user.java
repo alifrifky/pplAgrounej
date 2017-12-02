@@ -104,7 +104,7 @@ public class c_user {
             try {
                 int baris = viewUser.getSelectedRow();
                 String id = viewUser.getValueAt(baris, 0);
-//                int id = Integer.parseInt(iduser);
+
                 String username = viewUser.getTulis_username();
                 String password = viewUser.getTulis_Password();
                 String nama = viewUser.getTulis_nama();

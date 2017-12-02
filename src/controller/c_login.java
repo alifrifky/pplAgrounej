@@ -44,14 +44,14 @@ public class c_login {
                 theModel.cekLogin(theView.getTulis_username(), theView.getTulis_password());
                 id = m_login.id_user;
                 username = theView.getTulis_username();
-                System.out.println(theModel.getStatus());
+           
                 if (theModel.getStatus().equals("1")) {
                     theView.dispose();
                     controller.c_beranda m = new controller.c_beranda(new view.v_beranda());
-                    System.out.println(theModel.getStatus());
+                   
                 } else if (theModel.getStatus().equals("2")) {
                     theView.dispose();
-                    controller.c_pemesanan m = new controller.c_pemesanan(new view.v_pemesanan(), new model.m_pesanan());
+                    controller.c_pemesanan m = new controller.c_pemesanan(new view.v_pemesanan(), new model.m_pemesanan());
                 } else if (theModel.getStatus().equals("3")) {
                     theView.dispose();
                     controller.c_beranda m = new controller.c_beranda(new view.v_berandaAdmin());

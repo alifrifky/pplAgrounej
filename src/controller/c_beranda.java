@@ -11,7 +11,7 @@ import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import model.m_login;
-import model.m_pesanan;
+import model.m_pemesanan;
 import model.m_pemanenan;
 import view.v_adminPesanan;
 import view.v_beranda;
@@ -146,7 +146,7 @@ public class c_beranda {
         @Override
         public void actionPerformed(ActionEvent ae) {
             try {
-                controller.c_pemesanan m = new controller.c_pemesanan(new view.v_adminPesanan(), new model.m_pesanan());
+                controller.c_pemesanan m = new controller.c_pemesanan(new view.v_adminPesanan(), new model.m_pemesanan());
             } catch (SQLException ex) {
                 Logger.getLogger(c_beranda.class.getName()).log(Level.SEVERE, null, ex);
             }

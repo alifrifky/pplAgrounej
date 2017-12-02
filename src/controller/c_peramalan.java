@@ -23,7 +23,7 @@ public class c_peramalan {
 
     private view.v_peramalan viewPeramalan;
     private model.m_peramalan modelPeramalan;
-    private model.m_pesanan modelPesanan;
+    private model.m_pemesanan modelPesanan;
     private view.v_adminPesanan viewAdminPesanan;
 
     public c_peramalan(v_peramalan viewPeramalan, m_peramalan modelPeramalan) throws SQLException {
@@ -47,18 +47,15 @@ public class c_peramalan {
             int baris = viewPeramalan.getCombo().getSelectedIndex();
 
             pemesanan = Integer.parseInt(viewPeramalan.getValueAt((baris - 1), 1));
-            System.out.println("jumlahstok" + pemesanan);
+//            System.out.println("jumlahstok" + pemesanan);
             nilaiPeramalan = Float.parseFloat(viewPeramalan.getValueAt((baris - 1), 2));
-            System.out.println("peramalan" + nilaiPeramalan);
+//            System.out.println("peramalan" + nilaiPeramalan);
             Peramalan = (float) ((0.9 * pemesanan) + ((0.1) * nilaiPeramalan));
-            System.out.println(Peramalan);
+//            System.out.println(Peramalan);
 
             try {
                 modelPeramalan.peramalan((float) Peramalan, (String) viewPeramalan.getCombo().getSelectedItem());
                 viewPeramalan.setTable1(modelPeramalan.getAll());
-
-//                viewPeramalan.SetPeramalan(m_peramalan.peramalan);
-//               viewPeramalan.setNilai(m_peramalan.peramlan);
                 viewPeramalan.setNilai(String.valueOf(Peramalan));
 
             } catch (SQLException ex) {

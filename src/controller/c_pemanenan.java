@@ -95,7 +95,7 @@ public class c_pemanenan {
 
             String tanggal = String.valueOf(fm.format(viewPemanenan.getKalendar().getDate()));
             String tahun = String.valueOf(a.format(viewPemanenan.getKalendar().getDate()));
-            System.out.println(tahun);
+        
 
             try {
                 modelPemanenan.save(Float.parseFloat(viewPemanenan.getTulis_input()), tanggal, m_login.id_user, viewPemanenan.getLevel() + 1);
@@ -167,9 +167,9 @@ public class c_pemanenan {
                 String id = viewPemanenan.getValueAt(baris, 0);
 
                 float jumlah = Float.parseFloat(viewPemanenan.getTulis_input());
-                System.out.println(jumlah + stok);
+              
                 float updatestok = (float) ((jumlah) - stok);
-                System.out.println(updatestok);
+               
                 modelPemanenan.update(id, jumlah);
                 modelPemanenan.tambahUpdate(updatestok);
                 viewPemanenan.cleardata();
