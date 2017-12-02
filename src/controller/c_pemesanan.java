@@ -107,7 +107,14 @@ public class c_pemesanan {
 
         @Override
         public void mouseClicked(MouseEvent me) {
-            viewPesanan.enableEdit();
+            int baris = viewPesanan.getSelectedRow();
+            String nilai = viewPesanan.getValueAt(baris, 3);
+            if (nilai=="sudah dikonfirmasi") {
+                viewPesanan.disableEdit();
+                System.out.println(nilai);
+            } else {
+                viewPesanan.enableEdit();
+            }
         }
 
         @Override

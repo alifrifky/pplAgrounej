@@ -18,9 +18,8 @@ public class m_login {
 
     private koneksi kon;
     private String status_user;
-    
+
     public static String id_user;
-    
 
     public m_login() throws SQLException {
         kon = new koneksi("root", "", "tembakau");
@@ -32,8 +31,7 @@ public class m_login {
         String query = "select * from user "
                 + "where user_name='" + useraname + "' and "
                 + "password ='" + password + "';";
-        System.out.println(query);
-      
+
         ResultSet rs = kon.getResult(query);
 
         if (rs.next()) {
@@ -46,11 +44,9 @@ public class m_login {
     public static String getId_user() {
         return id_user;
     }
-    
+
     public String getStatus() {
         return this.status_user;
     }
-
-   
 
 }

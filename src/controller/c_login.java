@@ -55,9 +55,15 @@ public class c_login {
                 } else if (theModel.getStatus().equals("3")) {
                     theView.dispose();
                     controller.c_beranda m = new controller.c_beranda(new view.v_berandaAdmin());
+                } else if (theView.getTulis_username().isEmpty() && theView.getTulis_password().isEmpty()) {
+                    JOptionPane.showMessageDialog(theView, "masukkan password dan username");
+                } else if (theView.getTulis_password().isEmpty()) {
+                    JOptionPane.showMessageDialog(theView, "masukkan password dahulu");
+                } else if (theView.getTulis_username().isEmpty()) {
+                    JOptionPane.showMessageDialog(theView, "masukkan  username dahulu");
+
                 } else {
                     JOptionPane.showMessageDialog(theView, "masukkan dengan benar");
-
                 }
             } catch (SQLException ex) {
                 Logger.getLogger(c_login.class.getName()).log(Level.SEVERE, null, ex);

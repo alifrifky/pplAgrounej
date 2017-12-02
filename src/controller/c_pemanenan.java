@@ -59,6 +59,7 @@ public class c_pemanenan {
         viewStok.setVisible(true);
         viewStok.addKembaliListener(new backListener());
         viewStok.setTable1(modelStok.getDataTabel(viewStok.getCombo().getSelectedIndex()));
+        viewStok.setNilai(modelPemanenan.select());
 
         viewStok.addComboListener(new tahunListener());
     }
@@ -69,7 +70,7 @@ public class c_pemanenan {
         public void actionPerformed(ActionEvent ae) {
             try {
                 viewStok.setTable1(modelPemanenan.getDataTabel(viewStok.getCombo().getSelectedIndex()));
-                viewStok.setNilai(modelPemanenan.select());
+
             } catch (SQLException ex) {
                 Logger.getLogger(c_pemanenan.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -95,16 +96,16 @@ public class c_pemanenan {
             String tanggal = String.valueOf(fm.format(viewPemanenan.getKalendar().getDate()));
             String tahun = String.valueOf(a.format(viewPemanenan.getKalendar().getDate()));
             System.out.println(tahun);
-            try {
 
-                modelPemanenan.save(viewPemanenan.getTulis_input(), tanggal, m_login.id_user, viewPemanenan.getLevel() + 1);
-                modelPemanenan.tambahUpdate(Integer.parseInt(viewPemanenan.getTulis_input()));
+            try {
+                modelPemanenan.save(Float.parseFloat(viewPemanenan.getTulis_input()), tanggal, m_login.id_user, viewPemanenan.getLevel() + 1);
+                modelPemanenan.tambahUpdate(Float.parseFloat(viewPemanenan.getTulis_input()));
                 viewPemanenan.setTable(modelPemanenan.getDataTabel(viewPemanenan.getLevel() + 1));
+                viewPemanenan.cleardata();
             } catch (SQLException ex) {
                 System.out.println(ex);
             }
         }
-
     }
 
     private class periodeListener implements ActionListener {
@@ -147,7 +148,7 @@ public class c_pemanenan {
             if (baris != -1) {
 
                 String jumlah = viewPemanenan.getValueAt(baris, 1);
-              stok = Integer.parseInt(jumlah) ;
+                stok = Integer.parseInt(jumlah);
                 viewPemanenan.setInputStok(jumlah);
 
                 viewPemanenan.enableUpdate();
@@ -164,8 +165,11 @@ public class c_pemanenan {
             try {
                 int baris = viewPemanenan.getSelectedRow();
                 String id = viewPemanenan.getValueAt(baris, 0);
-                String jumlah = viewPemanenan.getTulis_input();
-                int updatestok=Integer.parseInt(jumlah)-stok;
+
+                float jumlah = Float.parseFloat(viewPemanenan.getTulis_input());
+                System.out.println(jumlah + stok);
+                float updatestok = (float) ((jumlah) - stok);
+                System.out.println(updatestok);
                 modelPemanenan.update(id, jumlah);
                 modelPemanenan.tambahUpdate(updatestok);
                 viewPemanenan.cleardata();

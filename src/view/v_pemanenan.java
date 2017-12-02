@@ -8,6 +8,7 @@ package view;
 import com.toedter.calendar.JDateChooser;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseListener;
+import java.util.Calendar;
 import javax.swing.JLabel;
 import javax.swing.JTable;
 import javax.swing.JTextField;
@@ -71,6 +72,8 @@ public class v_pemanenan extends javax.swing.JFrame {
 
     public void cleardata() {
         tulis_input.setText("");
+        kalendar.setCalendar(Calendar.getInstance());
+        
     }
 
     public String getValueAt(int baris, int kolom) {

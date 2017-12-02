@@ -27,24 +27,24 @@ public class m_pemanenan {
         return this.status_user;
     }
 
-    public void save(String jumlahstok, String tanggal, String id_user,int periode) throws SQLException {
-        String query = "INSERT INTO stok VALUES(NULL," + jumlahstok + ",'" + tanggal + "'," + id_user + ","+periode+")";
+    public void save(float jumlahpanen, String tanggal, String id_user,int periode) throws SQLException {
+        String query = "INSERT INTO pemanenan VALUES(NULL," + jumlahpanen + ",'" + tanggal + "'," + id_user + ","+periode+")";
     
         kon.execute(query);
    
     }
 
     public DefaultTableModel getDataTabel(int periode) throws SQLException {
-        Object[] header = {"id_stok", "jumlah_stok", "tanggal", "nama_user"};
+        Object[] header = {"No", "Jumlah Panen", "tanggal", "nama_user"};
 
         DefaultTableModel tm = new DefaultTableModel(null, header);
-        String sql = "SELECT * FROM stok s join user u on s.id_user=u.id_user where id_level=1 and periode="+periode ;
+        String sql = "SELECT * FROM pemanenan s join user u on s.id_user=u.id_user where id_level=1 and periode="+periode ;
         ResultSet rs = kon.getResult(sql);
         
         while (rs.next()) {
             String a[] = new String[4];
-            a[0] = rs.getString("id_stok");
-            a[1] = rs.getString("jumlah_stok");
+            a[0] = rs.getString("id_pemanenan");
+            a[1] = rs.getString("jumlah_panen");
             a[2] = rs.getString("tanggal");
             a[3] = rs.getString("nama_user");
 
@@ -53,12 +53,12 @@ public class m_pemanenan {
         return tm;
     }
 
-    public void tambahUpdate(int jumlahstok) throws SQLException {
+    public void tambahUpdate(float jumlahpanen) throws SQLException {
         String jumlah = "select stok from updatestok";
         ResultSet rs = kon.getResult(jumlah);
         rs.next();
-        int hitung = rs.getInt("stok") + jumlahstok;
-        String query = "UPDATE updatestok SET stok ='" + hitung + "' WHERE id_stoku =1";
+        float hitungkan = rs.getInt("stok") + jumlahpanen;
+        String query = "UPDATE updatestok SET stok ='" + hitungkan + "' WHERE id_stoku =1";
         kon.execute(query);
      
     }
@@ -73,14 +73,14 @@ public class m_pemanenan {
     }
      
 
-    public void update(String id_pemanenan,String total) throws SQLException {
-        String query = "UPDATE stok SET jumlah_stok ='" + total + "' WHERE id_stok =" + id_pemanenan;
+    public void update(String id_pemanenan,float total) throws SQLException {
+        String query = "UPDATE pemanenan SET jumlah_panen ='" + total + "' WHERE id_pemanenan =" + id_pemanenan;
         kon.execute(query);
         System.out.println(query);
     }
 
     public void delete(String id_pemanenan) throws SQLException {
-        String query = "DELETE FROM stok where id_user ='" + id_pemanenan + "'";
+        String query = "DELETE FROM pemanenan where id_user ='" + id_pemanenan + "'";
         
         kon.execute(query);
     }
