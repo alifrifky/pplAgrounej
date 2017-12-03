@@ -140,12 +140,24 @@ public class c_pemesanan {
         public void actionPerformed(ActionEvent ae) {
             try {
                 modelPesanan.konfirmasi(viewAdminPesanan.getSelectedID_pesanan());
-            
                 viewAdminPesanan.setTable1(modelPesanan.gettabelbelum(Integer.parseInt((String) viewAdminPesanan.getCombo().getSelectedItem())));
                 viewAdminPesanan.setTable2(modelPesanan.gettabelsudah(Integer.parseInt((String) viewAdminPesanan.getCombo().getSelectedItem())));
+           
+            
+             int baris = viewAdminPesanan.getRowCount();
+                int total = 0;
+                for (int i = 0; i < modelPesanan.gettabelsudah(Integer.parseInt((String) viewAdminPesanan.getCombo().getSelectedItem())).getRowCount(); i++) {
+                    int amount = Integer.parseInt((String) modelPesanan.gettabelsudah(Integer.parseInt((String) viewAdminPesanan.getCombo().getSelectedItem())).getValueAt(i, 1));
+                    total += amount;
+                }
+
+                modelPesanan.updateTotal(total, Integer.parseInt((String) viewAdminPesanan.getCombo().getSelectedItem()));
+
+    
+            
             } catch (SQLException ex) {
 
-                JOptionPane.showMessageDialog(viewAdminPesanan, "pilih disek lur");
+                JOptionPane.showMessageDialog(viewAdminPesanan, "pilih terlebih dahulu");
             }
         }
 
@@ -157,7 +169,7 @@ public class c_pemesanan {
         public void actionPerformed(ActionEvent ae) {
             try {
                 if (viewAdminPesanan.getjTable1().getSelectedRow() == -1) {
-                    JOptionPane.showMessageDialog(viewPesanan, "milio disek lah");
+                    JOptionPane.showMessageDialog(viewPesanan, "pilih terlebih dahulu");
                 } else {
                     jumlahStok = (String) viewAdminPesanan.getjTable1().getValueAt(viewAdminPesanan.getjTable1().getSelectedRow(), 1);
                     modelPesanan.tolak((String) viewAdminPesanan.getjTable1().getValueAt(viewAdminPesanan.getjTable1().getSelectedRow(), 0));

@@ -52,12 +52,10 @@ public class c_peramalan {
 //            System.out.println("peramalan" + nilaiPeramalan);
             Peramalan = (float) ((0.9 * pemesanan) + ((0.1) * nilaiPeramalan));
 //            System.out.println(Peramalan);
-
             try {
                 modelPeramalan.peramalan((float) Peramalan, (String) viewPeramalan.getCombo().getSelectedItem());
                 viewPeramalan.setTable1(modelPeramalan.getAll());
                 viewPeramalan.setNilai(String.valueOf(Peramalan));
-
             } catch (SQLException ex) {
                 JOptionPane.showMessageDialog(viewPeramalan, "Maaf Data Peramalan Kosongr");
             }
