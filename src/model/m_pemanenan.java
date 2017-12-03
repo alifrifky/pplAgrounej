@@ -34,7 +34,7 @@ public class m_pemanenan {
 
     }
 
-    public DefaultTableModel getDataTabel(int periode) throws SQLException {
+    public DefaultTableModel getTable(int periode) throws SQLException {
         Object[] header = {"No", "Jumlah Panen", "tanggal", "nama_user"};
 
         DefaultTableModel tm = new DefaultTableModel(null, header);
@@ -78,7 +78,7 @@ public class m_pemanenan {
     }
 
     public void delete(String id_pemanenan) throws SQLException {
-        String query = "DELETE FROM pemanenan where id_user ='" + id_pemanenan + "'";
+        String query = "DELETE FROM pemanenan where id_pemanenan ='" + id_pemanenan + "'";
 
         kon.execute(query);
     }

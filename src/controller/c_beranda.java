@@ -35,7 +35,7 @@ public class c_beranda {
     public c_beranda(v_beranda viewBeranda) {
         this.viewBeranda = viewBeranda;
         viewBeranda.setVisible(true);
-        viewBeranda.addinputListener(new inputListener());
+        viewBeranda.addPemanenanListener(new pemanenanListener());
         viewBeranda.adddlogoutListener(new logout());
     }
 
@@ -65,7 +65,7 @@ public class c_beranda {
         }
     }
 
-    private class inputListener implements ActionListener {
+    private class pemanenanListener implements ActionListener {
 
         @Override
         public void actionPerformed(ActionEvent ae) {

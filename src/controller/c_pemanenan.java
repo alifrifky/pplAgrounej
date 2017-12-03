@@ -44,7 +44,7 @@ public class c_pemanenan {
         c_stok();
         viewPemanenan.addInputStokListener(new inputPemanenanListener());
         viewPemanenan.addKembaliListener(new kembaliListener());
-        viewPemanenan.setTable(modelPemanenan.getDataTabel(viewPemanenan.getLevel() + 1));
+        viewPemanenan.setTable(modelPemanenan.getTable(viewPemanenan.getLevel() + 1));
         viewPemanenan.addPeriodeListener(new periodeListener());
         viewPemanenan.addEditListener(new editListener());
         viewPemanenan.addHapusListener(new hapusListener());
@@ -58,7 +58,7 @@ public class c_pemanenan {
         this.viewStok = viewStok;
         viewStok.setVisible(true);
         viewStok.addKembaliListener(new backListener());
-        viewStok.setTable1(modelStok.getDataTabel(viewStok.getCombo().getSelectedIndex()));
+        viewStok.setTable1(modelStok.getTable(viewStok.getCombo().getSelectedIndex()));
         viewStok.setNilai(modelPemanenan.select());
 
         viewStok.addComboListener(new tahunListener());
@@ -69,7 +69,7 @@ public class c_pemanenan {
         @Override
         public void actionPerformed(ActionEvent ae) {
             try {
-                viewStok.setTable1(modelPemanenan.getDataTabel(viewStok.getCombo().getSelectedIndex()));
+                viewStok.setTable1(modelPemanenan.getTable(viewStok.getCombo().getSelectedIndex()));
 
             } catch (SQLException ex) {
                 Logger.getLogger(c_pemanenan.class.getName()).log(Level.SEVERE, null, ex);
@@ -100,7 +100,7 @@ public class c_pemanenan {
             try {
                 modelPemanenan.save(Float.parseFloat(viewPemanenan.getTulis_input()), tanggal, m_login.id_user, viewPemanenan.getLevel() + 1);
                 modelPemanenan.tambahUpdate(Float.parseFloat(viewPemanenan.getTulis_input()));
-                viewPemanenan.setTable(modelPemanenan.getDataTabel(viewPemanenan.getLevel() + 1));
+                viewPemanenan.setTable(modelPemanenan.getTable(viewPemanenan.getLevel() + 1));
                 viewPemanenan.cleardata();
             } catch (SQLException ex) {
                 System.out.println(ex);
@@ -114,7 +114,7 @@ public class c_pemanenan {
         public void actionPerformed(ActionEvent ae) {
             try {
 
-                viewPemanenan.setTable(modelPemanenan.getDataTabel(viewPemanenan.getLevel() + 1));
+                viewPemanenan.setTable(modelPemanenan.getTable(viewPemanenan.getLevel() + 1));
             } catch (SQLException ex) {
                 System.out.println(ex);
             }
@@ -173,7 +173,7 @@ public class c_pemanenan {
                 modelPemanenan.update(id, jumlah);
                 modelPemanenan.tambahUpdate(updatestok);
                 viewPemanenan.cleardata();
-                viewPemanenan.setTable(modelPemanenan.getDataTabel(viewPemanenan.getLevel() + 1));
+                viewPemanenan.setTable(modelPemanenan.getTable(viewPemanenan.getLevel() + 1));
                 viewPemanenan.disableEdit();
                 viewPemanenan.disableUpdate();
                 viewPemanenan.enableInput();
@@ -193,7 +193,7 @@ public class c_pemanenan {
             String id = viewPemanenan.getValueAt(baris, 0);
             try {
                 modelPemanenan.delete(id);
-                viewPemanenan.setTable(modelPemanenan.getDataTabel(viewPemanenan.getLevel() + 1));
+                viewPemanenan.setTable(modelPemanenan.getTable(viewPemanenan.getLevel() + 1));
 
             } catch (SQLException ex) {
                 Logger.getLogger(c_pemanenan.class.getName()).log(Level.SEVERE, null, ex);

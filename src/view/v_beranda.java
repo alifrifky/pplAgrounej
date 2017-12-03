@@ -22,7 +22,7 @@ public class v_beranda extends javax.swing.JFrame {
 
     
 
-    public void addinputListener(ActionListener listener) {
+    public void addPemanenanListener(ActionListener listener) {
         btn_inputStok.addActionListener(listener);
     }
 
