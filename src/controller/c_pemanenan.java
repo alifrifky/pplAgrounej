@@ -14,6 +14,8 @@ import model.m_pemanenan;
 import view.v_pemanenan;
 
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
@@ -95,16 +97,21 @@ public class c_pemanenan {
 
             String tanggal = String.valueOf(fm.format(viewPemanenan.getKalendar().getDate()));
             String tahun = String.valueOf(a.format(viewPemanenan.getKalendar().getDate()));
-        
 
             try {
-                modelPemanenan.save(Float.parseFloat(viewPemanenan.getTulis_input()), tanggal, m_login.id_user, viewPemanenan.getLevel() + 1);
-                modelPemanenan.tambahUpdate(Float.parseFloat(viewPemanenan.getTulis_input()));
-                viewPemanenan.setTable(modelPemanenan.getTable(viewPemanenan.getLevel() + 1));
-                viewPemanenan.cleardata();
+                if (viewPemanenan.getTulis_input().isEmpty()) {
+                    JOptionPane.showMessageDialog(viewStok, "masukkan data terlebih dahulu");
+
+                } else {
+                    modelPemanenan.save(Float.parseFloat(viewPemanenan.getTulis_input()), tanggal, m_login.id_user, viewPemanenan.getLevel() + 1);
+                    modelPemanenan.tambahUpdate(Float.parseFloat(viewPemanenan.getTulis_input()));
+                    viewPemanenan.setTable(modelPemanenan.getTable(viewPemanenan.getLevel() + 1));
+                    viewPemanenan.cleardata();
+                }
             } catch (SQLException ex) {
-                System.out.println(ex);
+
             }
+
         }
     }
 
@@ -167,9 +174,9 @@ public class c_pemanenan {
                 String id = viewPemanenan.getValueAt(baris, 0);
 
                 float jumlah = Float.parseFloat(viewPemanenan.getTulis_input());
-              
+
                 float updatestok = (float) ((jumlah) - stok);
-               
+
                 modelPemanenan.update(id, jumlah);
                 modelPemanenan.tambahUpdate(updatestok);
                 viewPemanenan.cleardata();

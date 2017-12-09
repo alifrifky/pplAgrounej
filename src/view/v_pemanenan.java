@@ -8,7 +8,9 @@ package view;
 import com.toedter.calendar.JDateChooser;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseListener;
+import java.time.Instant;
 import java.util.Calendar;
+import java.util.Date;
 import javax.swing.JLabel;
 import javax.swing.JTable;
 import javax.swing.JTextField;
@@ -48,6 +50,10 @@ public class v_pemanenan extends javax.swing.JFrame {
 
     public JDateChooser getKalendar() {
         return kalendar;
+    }
+
+    public void setKalendar(String kalendar) {
+        this.kalendar.setDate(Date.from(Instant.MAX));
     }
 
     public void setTable(DefaultTableModel tm) {
